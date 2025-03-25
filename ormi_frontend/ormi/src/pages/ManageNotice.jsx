@@ -237,7 +237,7 @@ const ManageNotice = () => {
           {selectedNoticeId ? (
             <button onClick={handleEdit}>수정</button>
           ) : (
-            <button onClick={handleAdd}>추가</button>
+            <button onClick={handleAdd}>생성</button>
           )}
         </div>
       )}

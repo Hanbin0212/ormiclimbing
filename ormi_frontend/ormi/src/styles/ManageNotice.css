@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2rem;
     background-color: #f9fafb;
     font-family: 'Arial', sans-serif;
-    margin-top: 50px; /* 헤더와의 적당한 간격 설정 */
+    margin-top: 50px;
     box-sizing: border-box;
     width: 100%;
 }
@@ -26,40 +26,58 @@
     color: black;
 }
 
-/* 버튼 스타일 */
-.manage-notice-header button {
-    background-color: #68d391;
-    color: white;
-    border: none;
-    padding: 0.2rem 0.6rem; /* 크기 작게 설정 */
+/* 입력 필드 스타일 */
+.manage-notice-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  /* 화면의 너비를 최대한 활용 */
+    max-width: 800px;  /* 목록과 같은 최대 크기 설정 */
+    background-color: white;
+    padding: 1.5rem;
     border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-left: 1rem;
-    height: 30px;
-    font-size: 0.85rem;
-}
-
-.manage-notice-header button:hover {
-    background-color: #48bb78;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 /* 입력 필드 스타일 */
 .manage-notice-inputs label {
     font-weight: bold;
-    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
+/* 인풋과 텍스트 에어리어 스타일 */
 .manage-notice-inputs input,
 .manage-notice-inputs textarea {
     width: 100%;
-    max-width: 800px;
     padding: 0.5rem;
-    margin-top: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
     box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* 텍스트 에어리어 크기 조절 */
+.manage-notice-inputs textarea {
+    max-width: 800px; /* 컨테이너 안에서 넘치지 않게 설정 */
+    height: 150px;  /* 높이 고정 (너무 커지지 않게 설정) */
+    resize: vertical;  /* 수직 크기만 조절 가능하게 함 */
+}
+
+/* 버튼 스타일 */
+.manage-notice-inputs button {
+    background-color: #68d391;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1rem;
+}
+
+.manage-notice-inputs button:hover {
+    background-color: #48bb78;
 }
 
 /* 공지사항 목록 스타일 */
@@ -70,6 +88,7 @@
     max-width: 800px;
 }
 
+/* 공지사항 카드 스타일 */
 .manage-notice-list li {
     background-color: white;
     padding: 1rem;

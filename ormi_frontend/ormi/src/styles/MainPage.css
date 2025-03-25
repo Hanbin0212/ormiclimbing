@@ -9,6 +9,7 @@ src/styles/MainPage.css
     padding: 2rem;
     background-color: #f9fafb;
     font-family: 'Arial', sans-serif;
+    justify-content: center; /* 중앙 정렬 */
   
     min-height: calc(100vh - 60px); /* 헤더 높이를 정확하게 뺌 */
     padding-top: 100px;
