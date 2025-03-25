@@ -1,0 +1,32 @@
+package com.ormi.Mapper;
+
+
+import java.util.List;
+import com.ormi.Model.Notice;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
+@Mapper
+public interface NoticeMapper {
+
+	@Select("SELECT * FROM notice ORDER BY created_at DESC")
+	List<Notice> getAllNotices();
+
+    @Select("SELECT * FROM notice WHERE notice_id = #{notice_id}")
+    Notice getNoticeById(int notice_id);
+
+    @Insert("INSERT INTO notice (admin_id, title, content, file_path, created_at) VALUES (#{admin_id}, #{title}, #{content}, #{file_path}, NOW())")
+    @Options(useGeneratedKeys=true, keyProperty="notice_id", keyColumn="notice_id")  // 수정: keyColumn 추가
+    void createNotice(Notice notice);
+
+    @Update("UPDATE notice SET admin_id=#{admin_id}, title=#{title}, content=#{content}, file_path=#{file_path}, updated_at=NOW() WHERE notice_id=#{notice_id}")
+    void updateNotice(Notice notice);
+
+    @Delete("DELETE FROM notice WHERE notice_id=#{notice_id}")
+    void deleteNotice(int notice_id);
+}

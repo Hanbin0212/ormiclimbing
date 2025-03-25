@@ -1,0 +1,15 @@
+package com.ormi.Mapper;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+
+import com.ormi.Model.User;
+
+public interface UserMapper {
+
+    @Insert("INSERT INTO member(user_id, name, password, role) VALUES(#{userId}, #{name}, #{password}, #{role})")
+    void insertUser(User user);
+
+    @Select("SELECT * FROM member WHERE user_id = #{userId}")
+    User findByUserId(String userId);
+}

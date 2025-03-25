@@ -1,0 +1,26 @@
+package com.ormi.Model;
+
+import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonFormat
+public class Notice {
+    private Integer notice_id;  // 꼭 Integer여야 함
+    private String admin_id;
+    private String title;
+    private String content;
+    private int views;
+    private String file_path;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime created_at;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updated_at;
+}

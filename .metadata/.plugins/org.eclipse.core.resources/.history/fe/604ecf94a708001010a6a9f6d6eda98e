@@ -1,0 +1,31 @@
+package com.ormi.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable())  // CSRF 보호 비활성화
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/user/**").permitAll()  // 로그인, 회원가입 등 모든 사용자 접근 허용
+                .requestMatchers("/api/notice/**").permitAll()  // 공지사항 조회 및 등록 접근 허용
+                .anyRequest().authenticated()
+            )
+            .cors(cors -> cors.configurationSource(request -> {
+                var config = new org.springframework.web.cors.CorsConfiguration();
+                config.addAllowedOrigin("http://localhost:5173");
+                config.addAllowedMethod("*");
+                config.addAllowedHeader("*");
+                config.setAllowCredentials(true);
+                return config;
+            }));
+
+        return http.build();
+    }
+}

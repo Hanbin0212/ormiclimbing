@@ -1,0 +1,28 @@
+package com.ormi.config;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .cors(Customizer.withDefaults()) // 글로벌 CorsConfig를 사용
+            .csrf(csrf -> csrf.disable())    // 필요시 CSRF 비활성화
+            .authorizeHttpRequests(auth -> {
+                // OPTIONS 요청은 인증 없이 허용
+                auth.requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/api/**").permitAll();
+                // 나머지 /api/** 요청도 인증 없이 허용하거나, 원하는 대로 설정
+                auth.requestMatchers("/api/**").permitAll();
+                // 기타 요청은 기본 설정 적용
+                auth.anyRequest().authenticated();
+            })
+            .httpBasic(Customizer.withDefaults());
+        return http.build();
+    }
+}

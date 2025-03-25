@@ -1,0 +1,40 @@
+package com.ormi.Service;
+
+import org.springframework.stereotype.Service;
+
+import com.ormi.Mapper.NoticeMapper;
+
+@Service
+public class NoticeServiceImpl implements NoticeService {
+
+    private final NoticeMapper noticeMapper;
+
+    public NoticeServiceImpl(NoticeMapper noticeMapper) {
+        this.noticeMapper = noticeMapper;
+    }
+
+    @Override
+    public List<Notice> getAllNotices() {
+        return noticeMapper.getAllNotices();
+    }
+
+    @Override
+    public Notice getNoticeById(int notice_id) {
+        return noticeMapper.getNoticeById(notice_id);
+    }
+
+    @Override
+    public void createNotice(Notice notice) {
+        noticeMapper.createNotice(notice);
+    }
+
+    @Override
+    public void updateNotice(Notice notice) {
+        noticeMapper.updateNotice(notice);
+    }
+
+    @Override
+    public void deleteNotice(int notice_id) {
+        noticeMapper.deleteNotice(notice_id);
+    }
+}

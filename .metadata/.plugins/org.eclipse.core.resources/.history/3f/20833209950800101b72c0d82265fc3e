@@ -1,0 +1,9 @@
+package com.ormi.Service;
+
+public interface NoticeService {
+    List<Notice> getAllNotices();
+    Notice getNoticeById(int notice_id);
+    void createNotice(Notice notice);
+    void updateNotice(Notice notice);
+    void deleteNotice(int notice_id);
+}

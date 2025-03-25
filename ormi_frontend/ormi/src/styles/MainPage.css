@@ -1,0 +1,109 @@
+src/styles/MainPage.css
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9fafb;
+    font-family: 'Arial', sans-serif;
+  
+    min-height: calc(100vh - 60px); /* 헤더 높이를 정확하게 뺌 */
+    padding-top: 100px;
+    margin: 0 auto;
+    width: 100vw; /* viewport 너비 전체 사용 */
+    max-width: 100%; /* 최대 너비를 화면 전체로 설정 */
+  }
+  
+  
+  .main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: black;
+  }
+  
+  .main-description {
+    font-size: 1.1rem;
+    color: #718096;
+    margin-bottom: 2rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 정확히 두 열 배치 유지 */
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px; /* 이전 박스 크기와 가장 유사한 설정 */
+    margin: 0 auto;
+  }
+  
+  /* 기본 링크 스타일 제거 및 색상 고정 */
+.features-grid a {
+    color:#f9fafb; /* 부모의 색상(여기서는 흰색)을 그대로 상속받음 */
+    text-decoration: none; /* 밑줄 제거 */
+  }
+  
+  .features-grid a:hover {
+    color:#055ee3 /* 호버 시에도 같은 색상 유지 */
+  }
+  
+  
+  .feature-card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 내용을 중앙에 배치 */
+    align-items: center;
+    height: 200px; /* 원하는 높이로 고정 */
+    box-sizing: border-box;
+  }
+
+
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-card.primary .feature-card__title {
+    margin-top: 0.01rem; 
+    margin-bottom: 0.1rem; 
+  }
+
+  .feature-card__title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-card__desc {
+    font-size: 1rem;
+  }
+  
+  /* 개별 카드 색상 (귀여운 파스텔톤) */
+  .notice {
+    background-color: #f687b3;
+  }
+  
+  .gallery {
+    background-color: #f6ad55;
+  }
+  
+  .primary {
+    background-color: #5abb7f;
+  }
+  
+  .secondary {
+    background-color: #63b3ed;
+  }
+  
+
+
+ 

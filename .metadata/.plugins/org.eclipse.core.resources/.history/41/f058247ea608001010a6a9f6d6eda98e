@@ -1,0 +1,26 @@
+package com.ormi.Service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.ormi.Mapper.NoticeMapper;
+import com.ormi.Model.Notice;
+
+@Service
+public class NoticeServiceImpl implements NoticeService {
+
+    @Autowired
+    private NoticeMapper noticeMapper;
+
+    @Override
+    public void createNotice(Notice notice) {
+        System.out.println("📌 받은 Notice 객체 정보: " + notice);
+        noticeMapper.createNotice(notice);
+        
+        if (notice.getNotice_id() != null) {
+            System.out.println("✅ 생성된 공지사항 ID (DB 반영 성공): " + notice.getNotice_id());
+        } else {
+            System.err.println("❌ 공지사항 ID가 null입니다. 데이터베이스에 반영되지 않았습니다.");
+        }
+    }
+}

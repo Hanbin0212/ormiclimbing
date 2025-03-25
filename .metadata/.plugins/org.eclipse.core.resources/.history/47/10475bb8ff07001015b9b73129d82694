@@ -1,0 +1,20 @@
+package com.ormi.Model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User {
+    private Integer memberId;  // DB 자동 증가
+    private String memberName;
+    private String birthDate;  // 'YYYY-MM-DD' 형태의 문자열 또는 LocalDate
+    private String password;
+    private String crewname;   // Nullable
+    private String email;
+    private String phone;
+    private String createdAt;  // DB 자동 처리
+    private String updatedAt;  // DB 자동 처리
+}

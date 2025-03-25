@@ -1,0 +1,40 @@
+package com.ormi.Controller;
+
+public class NoticeController {
+
+}
+@RestController
+@RequestMapping("/api/notice")
+public class NoticeController {
+    private final NoticeService noticeService;
+
+    public NoticeController(NoticeService noticeService) {
+        this.noticeService = noticeService;
+    }
+
+    @GetMapping
+    public List<Notice> getAllNotices() {
+        return noticeService.getAllNotices();
+    }
+
+    @GetMapping("/{notice_id}")
+    public Notice getNoticeById(@PathVariable int notice_id) {
+        return noticeService.getNoticeById(notice_id);
+    }
+
+    @PostMapping
+    public void createNotice(@RequestBody Notice notice) {
+        noticeService.createNotice(notice);
+    }
+
+    @PutMapping("/{notice_id}")
+    public void updateNotice(@PathVariable int notice_id, @RequestBody Notice notice) {
+        notice.setNotice_id(notice_id);
+        noticeService.updateNotice(notice);
+    }
+
+    @DeleteMapping("/{notice_id}")
+    public void deleteNotice(@PathVariable int notice_id) {
+        noticeService.deleteNotice(notice_id);
+    }
+}

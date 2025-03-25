@@ -1,0 +1,14 @@
+package com.ormi.Mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import com.ormi.Model.User;
+
+@Mapper
+public interface AdminMapper {
+    @Select("""
+      SELECT admin_id   AS member_id, admin_name AS member_name, password, email, phone FROM admin 
+      WHERE admin_id = #{adminId}
+    		""")
+    User findByAdminId(String adminId);
+}

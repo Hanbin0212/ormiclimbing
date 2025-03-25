@@ -1,0 +1,51 @@
+package com.ormi.Controller;
+
+import java.util.List;  // 추가
+import com.ormi.Model.Notice; // 추가
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ormi.Service.NoticeService;
+
+@RestController
+@RequestMapping("/api/notice")
+public class NoticeController {
+    private final NoticeService noticeService;
+
+    public NoticeController(NoticeService noticeService) {
+        this.noticeService = noticeService;
+    }
+
+    @GetMapping
+    public List<Notice> getAllNotices() {
+        return noticeService.getAllNotices();
+    }
+
+    @GetMapping("/{notice_id}")
+    public Notice getNoticeById(@PathVariable int notice_id) {
+        return noticeService.getNoticeById(notice_id);
+    }
+
+    @PostMapping
+    public void createNotice(@RequestBody Notice notice) {
+        noticeService.createNotice(notice);
+    }
+
+    @PutMapping("/{notice_id}")
+    public void updateNotice(@PathVariable int notice_id, @RequestBody Notice notice) {
+        notice.setNotice_id(notice_id);
+        noticeService.updateNotice(notice);
+    }
+
+    @DeleteMapping("/{notice_id}")
+    public void deleteNotice(@PathVariable int notice_id) {
+        noticeService.deleteNotice(notice_id);
+    }
+}

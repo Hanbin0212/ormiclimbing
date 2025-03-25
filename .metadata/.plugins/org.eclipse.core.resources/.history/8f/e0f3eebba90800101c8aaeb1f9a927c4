@@ -1,0 +1,36 @@
+package com.ormi.Controller;
+
+import java.util.HashMap;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import com.ormi.Model.Notice;
+import com.ormi.Service.NoticeService;
+
+@RestController
+@RequestMapping("/api/notice")
+public class NoticeController {
+
+    @Autowired
+    private NoticeService noticeService;
+
+    @PostMapping
+    public ResponseEntity<?> createNotice(@RequestBody Notice notice) {
+        try {
+            System.out.println("📌 받은 Notice 객체 정보: " + notice);
+            noticeService.createNotice(notice);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", true);
+            response.put("notice_id", notice.getNotice_id());
+
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", false);
+            response.put("message", e.getMessage());
+            return ResponseEntity.badRequest().body(response);
+        }
+    }
+}

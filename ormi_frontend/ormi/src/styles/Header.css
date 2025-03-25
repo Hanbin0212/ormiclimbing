@@ -1,0 +1,107 @@
+/* 헤더: 상단 고정 및 전체 레이아웃 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box; /* 추가 */
+}
+
+/* 왼쪽 영역: 로고와 타이틀 */
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-link {
+  display: flex;
+  align-items: center; /* 수직으로 가운데 정렬 */
+}
+
+.header__logo {
+  width: 30px;
+  height: auto;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block; /* 이미지가 인라인으로 배치되도록 설정 */
+}
+
+.header__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* 로고와 글자를 같은 높이에 위치시킴 */
+}
+
+/* 아래 부분 추가 */
+.header__title:hover,
+.header__title:visited,
+.header__title:active {
+  color: #333;
+  text-decoration: none;
+}
+
+/* 오른쪽 영역: 사용자 정보 또는 메뉴 */
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+/* 사용자 정보 영역 */
+.header__user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__welcome {
+  font-weight: 600;
+  color: #333;
+}
+
+.header__logout-button {
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 메뉴 영역 (비로그인 상태) */
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__menu-button {
+  background: #3182ce;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 회원가입 버튼 색상 */
+.header__register {
+  background: #48bb78;
+}
+
+/* 호버 효과 */
+.header__menu-button:hover,
+.header__logout-button:hover {
+  opacity: 0.9;
+}

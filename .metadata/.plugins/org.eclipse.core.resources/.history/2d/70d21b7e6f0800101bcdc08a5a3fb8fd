@@ -1,0 +1,13 @@
+package com.ormi;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@MapperScan("com.ormi.Mapper") // <-- 이 부분 추가
+public class OrmiClimbingApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(OrmiClimbingApplication.class, args);
+    }
+}

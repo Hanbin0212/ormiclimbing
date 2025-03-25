@@ -1,0 +1,5 @@
+package com.ormi.Service;
+
+public class NoticeServiceImpl {
+
+}

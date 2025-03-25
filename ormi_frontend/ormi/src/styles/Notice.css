@@ -1,0 +1,65 @@
+.notice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9fafb;
+    font-family: 'Arial', sans-serif;
+    margin-top: 50px; /* 헤더와의 적당한 간격 설정 */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* 헤더 스타일 */
+.notice-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.notice-header h2 {
+    font-size: 2rem;
+    color: black;
+}
+
+/* 버튼 스타일 */
+.notice-header button {
+    background-color: #68d391;
+    color: white;
+    border: none;
+    padding: 0.2rem 0.6rem; /* 버튼 크기를 더 작게 설정 */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 1rem; /* 제목과의 간격 설정 */
+    height: 30px; /* 버튼 높이 조절 */
+    font-size: 0.85rem; /* 버튼 글자 크기 조정 */
+}
+
+.notice-header button:hover {
+    background-color: #48bb78;
+}
+
+.notice-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+.notice-list li {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.notice-list li:hover {
+    transform: translateY(-3px);
+}

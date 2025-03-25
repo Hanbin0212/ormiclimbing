@@ -1,0 +1,48 @@
+package com.ormi.Controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ormi.Model.User;
+import com.ormi.Service.UserService;
+
+@RestController
+@RequestMapping("/api/user")
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+public class UserController {
+
+    @Autowired private UserService userService;
+
+    @PostMapping("/register")
+    public ResponseEntity<?> registerUser(@RequestBody User user) {
+        try {
+            userService.registerUser(user);
+            return ResponseEntity.ok(Map.of("success", true, "message", "회원가입 성공"));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("success", false, "message", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody Map<String, String> request) {
+        try {
+            User user = userService.loginUser(request.get("email"), request.get("password"));
+            user.setPassword(null);
+            return ResponseEntity.ok(Map.of(
+                "success", true,
+                "memberId", user.getMemberId(),
+                "memberName", user.getMemberName(),
+                "email", user.getEmail()
+            ));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("success", false, "message", e.getMessage()));
+        }
+    }
+}
