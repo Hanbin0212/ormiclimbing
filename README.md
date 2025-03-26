@@ -13,7 +13,8 @@
 ### 1. 메인화면
 - `공지사항`, `갤러리`, `크루 가입/생성`, `나의 크루` 등의 메뉴가 직관적으로 배치  
 - 반응형 디자인 적용으로 모바일/태블릿에서도 편리하게 이용 가능
-<img src="https://github.com/user-attachments/assets/5747c95d-5e56-495d-86c5-08bd8199126f" alt="스크린샷" style="width:70%;" />
+<img width="700" alt="스크린샷 2025-03-26 오후 8 27 19" src="https://github.com/user-attachments/assets/803ed822-f64c-4263-8723-2e796bf93bcf" />
+
 
 ### 2. 로그인 및 회원가입
 - **관리자, 일반 회원** 모두 개별 로그인 페이지 제공  
@@ -24,18 +25,18 @@
 
 **[관리자 로그인]**
 > 관리자 로그인: 관리자 전용 계정으로 시스템 내 모든 기능을 제어할 수 있습니다.<br>
-<img src="https://github.com/user-attachments/assets/e15c6263-e2ce-4577-88d4-3864083756f8" alt="관리자 로그인" style="width:70%;" />
+<img src="https://github.com/user-attachments/assets/485c8b43-ac8f-4728-839c-f4e2ebc2c2df" alt="일반회원 로그인" style="width:70%;" />
 <br><br><br><br>
 
 **[일반 회원 로그인]**  
 > 일반 회원 로그인: 크루장, 운영진, 일반회원을 위한 기능을 사용할 수 있습니다.<br>
-<img src="https://github.com/user-attachments/assets/904b1a73-be11-49b5-bd02-5c07e5b1025a" alt="일반회원 로그인" style="width:70%;" />
-<br><br><br><br>
 
+<img src="https://github.com/user-attachments/assets/3565579a-ccfc-4046-bd1e-1b28e1bb73d7" alt="관리자 로그인" style="width:  70%;" />
+<br><br><br><br>
 
 **[회원가입]**  
 > 회원가입: 필요한 정보를 입력하고, 비밀번호를 설정하여 가입 완료<br>
-<img src="https://github.com/user-attachments/assets/1dab542a-1bc6-4f54-8b64-cc857897c1a5" alt="회원가입" style="width:70%;" />
+<img src="https://github.com/user-attachments/assets/efe16d65-0311-4c89-8a9b-9e263f8bcbae" alt="회원가입" style="width:70%;" />
 <br><br><br><br>
 
 
@@ -49,19 +50,19 @@
 <br><br>
 
 **[관리자 공지사항 접근]**  
-<img src="https://github.com/user-attachments/assets/180ae6ca-9a53-477e-9c25-443f91b9e18e" alt="관리자 공지사항 접근" style="width:70%;" /><br><br><br><br>
+<img src="https://github.com/user-attachments/assets/a91b6102-241d-45b0-a899-21e9856c5603" alt="관리자 공지사항 접근" style="width:70%;" /><br><br><br><br>
 <br><br><br><br>
 
 **[관리자 공지사항 생성/수정/삭제]**  
 > 관리자 공지사항 페이지: 등록된 공지사항 목록 확인, 신규 작성, 내용 수정, 삭제 가능  <br>
 
-<img src="https://github.com/user-attachments/assets/d60e171a-ddb3-4eb0-a623-a11c10a22c33" alt="관리자 공지사항 생성/수정/삭제" style="width:70%;" /><br><br><br><br>
+<img src="https://github.com/user-attachments/assets/88501a7c-efaa-4212-8361-00e52d0fa5b2" alt="관리자 공지사항 생성/수정/삭제" style="width:70%;" /><br><br><br><br>
 <br><br><br><br>
 
 **[일반 회원 공지사항 접근]**  
 > 일반 회원: 공지사항을 확인하고, 댓글이나 좋아요 등으로 의견을 남길 수 있습니다 <br>
 
-<img src="https://github.com/user-attachments/assets/0f57ba01-49d9-4fd9-a7ee-29660898bafc" alt="일반 회원 공지사항 접근" style="width:70%;" /><br><br><br><br>
+<img src="https://github.com/user-attachments/assets/af5807a3-1132-482f-b253-ebc855e7446d" alt="일반 회원 공지사항 접근" style="width:70%;" /><br><br><br><br>
 <br><br><br><br>
 
 ---
@@ -93,3 +94,6 @@
 - **기타**: 반응형 디자인, REST API
 - **빌드도구**: Gradle
 ---
+
+
+
